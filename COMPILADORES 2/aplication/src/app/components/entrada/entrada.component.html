@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
+
+<div class="container col-sm-12 col-md-8 col-xl-8">
+  
+    <button (click)="addWindow()" type="button" class="btn btn-outline-success">+</button>
+  <div class="card text-white bg-primary  mb-3">
+    <div class="card-header">COMPILADORES 2</div>
+    <div class="card-body">
+    <!-- INICIO CONTENEDOR TARGET  -->
+      <ul class="nav nav-tabs" id="padreWindows">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#home" >Home</a>
+        </li>
+    </ul>
+
+      <div id="MIS_TEXTS" class="tab-content">
+        
+        <div class="tab-pane fade" id="home">
+            <textarea (input) ="setText(text)"  class="form-control" rows="5" id="home_" #text>HOME</textarea>  
+        
+            <div class="form-group col-12">
+                <button (click)="excuteProgram()" type="button" class="btn btn-outline-success">Success</button>
+            </div>
+        </div>   
+  
+
+        <!--
+        <div class="tab-pane fade active show" id="profile" *ngFor="let ent of entradas">
+            <div class="form-group">
+                <textarea (input) ="setText(text)"  class="form-control" rows="5" id="comment" #text>{{ent.entrada}}</textarea>
+            </div>   
+            
+        </div>
+
+      </div>
+
+       FIN DEL CONTENEDOR TARGET -->
+    
+    </div>
+  </div>
+
+
+
+  
+</div>
