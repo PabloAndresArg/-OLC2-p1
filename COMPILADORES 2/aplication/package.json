@@ -7,7 +7,13 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "jison": "jison ./src/GRAMATICA/olc2.jison"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   },
   "private": true,
   "dependencies": {
@@ -21,6 +27,7 @@
     "@angular/router": "~9.1.0",
     "@ctrl/ngx-codemirror": "^4.0.2",
     "codemirror": "^5.58.2",
+    "jison": "^0.4.18",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -30,9 +37,9 @@
     "@angular/cli": "~9.1.0",
     "@angular/compiler-cli": "~9.1.0",
     "@angular/language-service": "~9.1.0",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.19.4",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",

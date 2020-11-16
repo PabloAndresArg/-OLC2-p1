@@ -2,9 +2,19 @@
 
 <div class="container col-sm-12 col-md-8 col-xl-8">
   
-    <button (click)="addWindow()" type="button" class="btn btn-outline-success">+</button>
+    
   <div class="card text-white bg-primary  mb-3">
-    <div class="card-header">COMPILADORES 2</div>
+    <div class="card-header"> <h6 class="display-2 offset-2">COMPILADORES 2</h6><br>
+      <div class = "btn-group btn-group-toggle my-4" data-toggle = "botones">
+   
+        <div class = "form-group col-12">
+          <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
+          <input type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
+        </div>
+        <br>
+        <button (click)="addWindow()" type="button" class="btn btn-outline-success">ADD WINDOW</button>
+      </div>
+    </div>
     <div class="card-body">
     <!-- INICIO CONTENEDOR TARGET  -->
       <ul class="nav nav-tabs" id="padreWindows">
@@ -24,10 +34,8 @@
           mode: 'javascript'
         }"
       ></ngx-codemirror>
-
-
-        <div class="form-group col-12 m-1">
-        <button (click)="excuteProgram(text)" type="button" class="btn btn-outline-success col-12">Success</button>
+        <div class="form-group col-12 m-1 my-4">
+        <button (click)="excuteProgram(text)" type="button" class="btn btn-outline-success col-12">Analizar</button>
         </div>
       </div>   
 
@@ -39,8 +47,8 @@
           mode: 'javascript'
         }"
       ></ngx-codemirror>
-        <div class="form-group col-12 m-1">
-        <button (click)="excuteProgram(text1)" type="button" class="btn btn-outline-success col-12">Success</button>
+        <div class="form-group col-12 m-1 my-4 ">
+        <button (click)="excuteProgram(text1)" type="button" class="btn btn-outline-success col-12">Analizar</button>
         </div>
       </div>   
 
@@ -53,8 +61,8 @@
         mode: 'javascript'
       }"
     ></ngx-codemirror>
-        <div class="form-group col-12 m-1">
-        <button (click)="excuteProgram(text2)" type="button" class="btn btn-outline-success col-12">Success</button>
+        <div class="form-group col-12 m-1 my-4">
+        <button (click)="excuteProgram(text2)" type="button" class="btn btn-outline-success col-12">Analizar</button>
         </div>
     </div>   
 
@@ -67,8 +75,8 @@
           mode: 'javascript'
         }"
       > </ngx-codemirror>
-          <div class="form-group col-12 m-1">
-          <button (click)="excuteProgram(text3)" type="button" class="btn btn-outline-success col-12">Success</button>
+          <div class="form-group col-12 m-1 my-4">
+          <button (click)="excuteProgram(text3)" type="button" class="btn btn-outline-success col-12">Analizar</button>
           </div>
       </div>   
 
@@ -80,8 +88,8 @@
             mode: 'javascript'
           }"
         ></ngx-codemirror>
-            <div class="form-group col-12 m-1">
-            <button (click)="excuteProgram(text4)" type="button" class="btn btn-outline-success col-12">Success</button>
+            <div class="form-group col-12 m-1 my-4">
+            <button (click)="excuteProgram(text4)" type="button" class="btn btn-outline-success col-12">Analizar</button>
             </div>
         </div>   
 
@@ -94,8 +102,8 @@
             mode: 'javascript'
           }"
         ></ngx-codemirror>  
-          <div class="form-group col-12 m-1">
-          <button (click)="excuteProgram(text5)" type="button" class="btn btn-outline-success col-12">Success</button>
+          <div class="form-group col-12 m-1 my-4">
+          <button (click)="excuteProgram(text5)" type="button" class="btn btn-outline-success col-12">Analizar</button>
           </div>
         </div>   
 
@@ -107,8 +115,8 @@
             mode: 'javascript'
           }"
         ></ngx-codemirror>
-          <div class="form-group col-12 m-1">
-          <button (click)="excuteProgram(text6)" type="button" class="btn btn-outline-success col-12">Success</button>
+          <div class="form-group col-12 m-1 my-4">
+          <button (click)="excuteProgram(text6)" type="button" class="btn btn-outline-success col-12">Analizar</button>
           </div>
         </div>   
 
@@ -120,8 +128,8 @@
               mode: 'javascript'
             }"
           ></ngx-codemirror>
-            <div class="form-group col-12 m-1">
-            <button (click)="excuteProgram(text7)" type="button" class="btn btn-outline-success col-12">Success</button>
+            <div class="form-group col-12 m-1 my-4">
+            <button (click)="excuteProgram(text7)" type="button" class="btn btn-outline-success col-12">Analizar</button>
             </div>
           </div>   
 
@@ -133,8 +141,8 @@
               mode: 'javascript'
             }"
           ></ngx-codemirror> 
-            <div class="form-group col-12 m-1">
-            <button (click)="excuteProgram(text8)" type="button" class="btn btn-outline-success col-12">Success</button>
+            <div class="form-group col-12 m-1 my-4">
+            <button (click)="excuteProgram(text8)" type="button" class="btn btn-outline-success col-12">Analizar</button>
             </div>
           </div>   
 
@@ -150,3 +158,8 @@
   
 </div>
 
+
+
+<script src="../../../GRAMATICA/olc2.js">
+
+</script>

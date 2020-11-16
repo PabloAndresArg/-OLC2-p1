@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import jison from "./../../../GRAMATICA/olc2";
 @Component({
   selector: 'app-entrada',
   templateUrl: './entrada.component.html',
@@ -26,6 +26,8 @@ export class EntradaComponent implements OnInit {
   
   public excuteProgram(formTextArea: any): any{
     console.log('Analizando: ' , formTextArea.value);
+    let arbol = jison.parse('numeric string');
+    console.log(arbol);
   }
 
   public addWindow(): any{
@@ -42,8 +44,6 @@ export class EntradaComponent implements OnInit {
         a.innerHTML='P'+this.id;// da texto 
         nuevoLI.appendChild(a);
         padreWindows.appendChild(nuevoLI);
-
-      
         this.id++;
         console.log(a.getAttribute('href'));
     }
