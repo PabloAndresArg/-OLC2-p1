@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/*PARA CODE MIRROR*/
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/material';
+@import "~codemirror/lib/codemirror";
+@import "~codemirror/theme/eclipse";
+@import "~codemirror/theme/dracula";
+@import "~codemirror/theme/twilight";
+@import "~codemirror/theme/bespin";

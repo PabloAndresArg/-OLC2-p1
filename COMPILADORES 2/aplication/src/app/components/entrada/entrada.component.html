@@ -9,37 +9,144 @@
     <!-- INICIO CONTENEDOR TARGET  -->
       <ul class="nav nav-tabs" id="padreWindows">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#home" >Home</a>
+          <a class="nav-link" data-toggle="tab" href="#home" >P0</a>
         </li>
+
     </ul>
 
       <div id="MIS_TEXTS" class="tab-content">
         
-        <div class="tab-pane fade" id="home">
-            <textarea (input) ="setText(text)"  class="form-control" rows="5" id="home_" #text>HOME</textarea>  
-        
-            <div class="form-group col-12">
-                <button (click)="excuteProgram()" type="button" class="btn btn-outline-success">Success</button>
+      <div class="tab-pane fade active" id="home">
+        <ngx-codemirror   (input) ="setText(text)" #text
+        [options]="{
+          lineNumbers: true,
+          theme: 'twilight',
+          mode: 'javascript'
+        }"
+      ></ngx-codemirror>
+
+
+        <div class="form-group col-12 m-1">
+        <button (click)="excuteProgram(text)" type="button" class="btn btn-outline-success col-12">Success</button>
+        </div>
+      </div>   
+
+      <div class="tab-pane fade " id="window_1" >
+        <ngx-codemirror   (input) ="setText(text1)" #text1
+        [options]="{
+          lineNumbers: true,
+          theme: 'dracula',
+          mode: 'javascript'
+        }"
+      ></ngx-codemirror>
+        <div class="form-group col-12 m-1">
+        <button (click)="excuteProgram(text1)" type="button" class="btn btn-outline-success col-12">Success</button>
+        </div>
+      </div>   
+
+
+    <div class="tab-pane fade " id="window_2">
+      <ngx-codemirror   (input) ="setText(text2)" #text2
+      [options]="{
+        lineNumbers: true,
+        theme: 'twilight',
+        mode: 'javascript'
+      }"
+    ></ngx-codemirror>
+        <div class="form-group col-12 m-1">
+        <button (click)="excuteProgram(text2)" type="button" class="btn btn-outline-success col-12">Success</button>
+        </div>
+    </div>   
+
+
+      <div class="tab-pane fade" id="window_3">
+        <ngx-codemirror   (input) ="setText(text3)" #text3
+        [options]="{
+          lineNumbers: true,
+          theme: 'dracula',
+          mode: 'javascript'
+        }"
+      > </ngx-codemirror>
+          <div class="form-group col-12 m-1">
+          <button (click)="excuteProgram(text3)" type="button" class="btn btn-outline-success col-12">Success</button>
+          </div>
+      </div>   
+
+        <div class="tab-pane fade" id="window_4">
+          <ngx-codemirror   (input) ="setText(text4)" #text4
+          [options]="{
+            lineNumbers: true,
+            theme: 'twilight',
+            mode: 'javascript'
+          }"
+        ></ngx-codemirror>
+            <div class="form-group col-12 m-1">
+            <button (click)="excuteProgram(text4)" type="button" class="btn btn-outline-success col-12">Success</button>
             </div>
         </div>   
-  
 
-        <!--
-        <div class="tab-pane fade active show" id="profile" *ngFor="let ent of entradas">
-            <div class="form-group">
-                <textarea (input) ="setText(text)"  class="form-control" rows="5" id="comment" #text>{{ent.entrada}}</textarea>
-            </div>   
-            
-        </div>
 
-      </div>
+        <div class="tab-pane fade" id="window_5">
+          <ngx-codemirror   (input) ="setText(text5)" #text5
+          [options]="{
+            lineNumbers: true,
+            theme: 'dracula',
+            mode: 'javascript'
+          }"
+        ></ngx-codemirror>  
+          <div class="form-group col-12 m-1">
+          <button (click)="excuteProgram(text5)" type="button" class="btn btn-outline-success col-12">Success</button>
+          </div>
+        </div>   
 
-       FIN DEL CONTENEDOR TARGET -->
-    
-    </div>
-  </div>
+        <div class="tab-pane fade" id="window_6">
+          <ngx-codemirror   (input) ="setText(text6)" #text6
+          [options]="{
+            lineNumbers: true,
+            theme: 'twilight',
+            mode: 'javascript'
+          }"
+        ></ngx-codemirror>
+          <div class="form-group col-12 m-1">
+          <button (click)="excuteProgram(text6)" type="button" class="btn btn-outline-success col-12">Success</button>
+          </div>
+        </div>   
+
+          <div class="tab-pane fade" id="window_7">
+            <ngx-codemirror   (input) ="setText(text7)" #text7
+            [options]="{
+              lineNumbers: true,
+              theme: 'eclipse',
+              mode: 'javascript'
+            }"
+          ></ngx-codemirror>
+            <div class="form-group col-12 m-1">
+            <button (click)="excuteProgram(text7)" type="button" class="btn btn-outline-success col-12">Success</button>
+            </div>
+          </div>   
+
+          <div class="tab-pane fade" id="window_8">
+            <ngx-codemirror   (input) ="setText(text8)" #text8
+            [options]="{
+              lineNumbers: true,
+              theme: 'eclipse',
+              mode: 'javascript'
+            }"
+          ></ngx-codemirror> 
+            <div class="form-group col-12 m-1">
+            <button (click)="excuteProgram(text8)" type="button" class="btn btn-outline-success col-12">Success</button>
+            </div>
+          </div>   
+
+
+
+</div>
+
+
+</div>
 
 
 
   
 </div>
+
