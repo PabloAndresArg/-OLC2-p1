@@ -1,5 +1,5 @@
 %{
-
+    const {Arbol} = require('./build/arbol.js'); 
 %}
 %lex
 %options case-insensitive
@@ -45,9 +45,11 @@ identifier ([a-zA-Z_])[a-zA-Z0-9_]*
 "break"               return 'break'
 "continue"            return 'continue'
 "while"               return 'while'
-"numeric"             return 'numeric'
+"int"                 return 'int'
 "string"              return 'string'
 "boolean"             return 'boolean'
+"double"              return 'double'
+"char"                return 'char'
 {identifier}          return 'identifier'
 <<EOF>>	          return 'EOF'
 
@@ -66,12 +68,16 @@ identifier ([a-zA-Z_])[a-zA-Z0-9_]*
 
 %%
 
-INICIO : INSTRUCCIONES EOF { return $$; };
+INICIO : INSTRUCCIONES EOF {
+    $$ = new Arbol($1);
+    return $$;
+    };
 
-INSTRUCCIONES : INSTRUCCIONES INSTRUCCION { $$ = $1;  $$.push($2); }
+INSTRUCCIONES :  INSTRUCCIONES INSTRUCCION { $$ = $1;  $$.push($2); }
               | INSTRUCCION               { $$ = [$1]; }
               ;
 
-INSTRUCCION : 'numeric' 'string' {$$ = $1;}
+INSTRUCCION : 'int' 'string' {$$ = $1;}
             | 'string' {$$ = $1;}
+            | error ';' { yyerrok(); }
             ;

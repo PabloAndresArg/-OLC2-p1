@@ -19,7 +19,7 @@ export class EntradaComponent implements OnInit {
   public cantidadPestanias: number = 9;
   constructor() {
     for (let i = 0 ; i < this.cantidadPestanias ; i++) {
-      this.entradas.push('\t');
+      this.entradas.push('');
     } 
    
   }
