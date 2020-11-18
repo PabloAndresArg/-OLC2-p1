@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import jison from "./../../../GRAMATICA/olc2";
-import * as File_ from 'file-saver';
 import {saveAs} from 'file-saver';
 @Component({
   selector: 'app-entrada',
@@ -17,6 +16,7 @@ export class EntradaComponent implements OnInit {
   // -------------------
   public entradas:any = [];
   public cantidadPestanias: number = 9;
+  public salida: any;
   constructor() {
     for (let i = 0 ; i < this.cantidadPestanias ; i++) {
       this.entradas.push('');

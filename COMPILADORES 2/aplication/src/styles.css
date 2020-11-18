@@ -1,8 +1,18 @@
 /*PARA CODE MIRROR*/
 @import '~codemirror/lib/codemirror';
 @import '~codemirror/theme/material';
-@import "~codemirror/lib/codemirror";
 @import "~codemirror/theme/eclipse";
 @import "~codemirror/theme/dracula";
 @import "~codemirror/theme/twilight";
 @import "~codemirror/theme/bespin";
+@import "~codemirror/theme/ayu-dark";
+
+body{
+
+    background-image: url(./assets/fondo.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    font-family: cursive;
+}

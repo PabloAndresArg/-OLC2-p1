@@ -1,259 +1,553 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css"
+  integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ"
+  crossorigin="anonymous"
+/>
 
 <div class="container col-sm-12 col-md-8 col-xl-8">
-  
-    
-  <div class="card text-white bg-primary  mb-3">
-    <div class="card-header"> <h6 class="display-2 offset-2">COMPILADORES 2</h6><br>
- 
+  <div class="card text-white bg-primary mb-3">
+    <div class="card-header">
+      <h6 class="display-2 offset-2">COMPILADORES 2</h6>
+      <br />
     </div>
-    <div class="card-body">
-    <!-- INICIO CONTENEDOR TARGET  -->
+    <div class="card-body"  style="background-color: black; ">
+      <!-- INICIO CONTENEDOR TARGET  -->
       <ul class="nav nav-tabs" id="padreWindows">
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#home" >P0</a>
+          <a class="nav-link" data-toggle="tab" href="#home">P0</a>
         </li>
-    </ul>
+      </ul>
 
       <div id="MIS_TEXTS" class="tab-content">
-
-      <br>
-      <div class="tab-pane fade active" id="home">
-        <div class="row">
-          <div class = "form-group col-8 my-4">
-            <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
-            <input id="fileInput"  (change) ="fileChanged($event ,0)" style="background-color: aliceblue; color:black" type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
-          </div>
-          <div class = "btn-group btn-group-toggle my-4 col-4" data-toggle = "botones">
-            <button (click)="addWindow()" type="button" class="btn btn-success">ADD WINDOW</button>
-            <button (click)="SA_VE(0)" type="button" class="btn btn-info">SAVE</button>
-          </div>
-        </div>
-      <br>
-        <ngx-codemirror 
-        [(ngModel)] = "this.entradas[0]"
-        [options]="{
-          lineNumbers: true,
-          theme: 'twilight',
-          mode: 'javascript'
-        }"
-      ></ngx-codemirror>
-        <div class="form-group col-12 m-1 my-4">
-        <button (click)="excuteProgram(this.entradas[0])" type="button" class="btn btn-outline-success col-12">Analizar</button>
-        </div>
-      </div>   
-
-      <div class="tab-pane fade " id="window_1" >
+        <br />
+        <div class="tab-pane fade active" id="home">
           <div class="row">
-            <div class = "form-group col-8 my-4">
-              <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
-              <input id="fileInput"  (change) ="fileChanged($event ,1)" style="background-color: aliceblue; color:black" type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
+            <div class="form-group col-8 my-4">
+              <label for="exampleInputFile">
+                <font style="vertical-align: heredar">
+                  <font style="vertical-align: heredar">
+                    Abre un Archivo</font
+                  ></font
+                ></label
+              >
+              <input
+                id="fileInput"
+                (change)="fileChanged($event, 0)"
+                style="background-color: aliceblue; color: black"
+                type="file"
+                class="form-control-file"
+                id="exampleInputFile"
+                aria-describedby="fileHelp"
+              />
             </div>
-            <div class = "btn-group btn-group-toggle my-4 col-4" data-toggle = "botones">
-              <button (click)="addWindow()" type="button" class="btn btn-success">ADD WINDOW</button>
-              <button (click)="SA_VE(1)" type="button" class="btn btn-info">SAVE</button>
+            <div
+              class="btn-group btn-group-toggle my-4 col-4"
+              data-toggle="botones"
+            >
+              <button
+                (click)="addWindow()"
+                type="button"
+                class="btn btn-success"
+              >
+                ADD WINDOW
+              </button>
+              <button (click)="SA_VE(0)" type="button" class="btn btn-info">
+                SAVE
+              </button>
             </div>
           </div>
-         <br>
-        <ngx-codemirror 
-        [(ngModel)] = "this.entradas[1]"
-        [options]="{
-          lineNumbers: true,
-          theme: 'dracula',
-          mode: 'javascript'
-        }"
-      ></ngx-codemirror>
-        <div class="form-group col-12 m-1 my-4 ">
-        <button (click)="excuteProgram(this.entradas[1])" type="button" class="btn btn-outline-success col-12">Analizar</button>
-        </div>
-      </div>   
-
-
-    <div class="tab-pane fade " id="window_2">
-      <div class="row">
-        <div class = "form-group col-8 my-4">
-          <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
-          <input id="fileInput"  (change) ="fileChanged($event ,2)" style="background-color: aliceblue; color:black" type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
-        </div>
-        <div class = "btn-group btn-group-toggle my-4 col-4" data-toggle = "botones">
-          <button (click)="addWindow()" type="button" class="btn btn-success">ADD WINDOW</button>
-          <button (click)="SA_VE(2)" type="button" class="btn btn-info">SAVE</button>
-        </div>
-      </div>
-       <br>
-      <ngx-codemirror  
-      [(ngModel)] = "this.entradas[2]"
-      [options]="{
-        lineNumbers: true,
-        theme: 'twilight',
-        mode: 'javascript'
-      }"
-    ></ngx-codemirror>
-        <div class="form-group col-12 m-1 my-4">
-        <button (click)="excuteProgram(this.entradas[2])" type="button" class="btn btn-outline-success col-12">Analizar</button>
-        </div>
-    </div>   
-
-
-      <div class="tab-pane fade" id="window_3">
-        <div class="row">
-          <div class = "form-group col-8 my-4">
-            <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
-            <input id="fileInput"  (change) ="fileChanged($event ,3)" style="background-color: aliceblue; color:black" type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
-          </div>
-          <div class = "btn-group btn-group-toggle my-4 col-4" data-toggle = "botones">
-            <button (click)="addWindow()" type="button" class="btn btn-success">ADD WINDOW</button>
-            <button (click)="SA_VE(3)" type="button" class="btn btn-info">SAVE</button>
-          </div>
-        </div>
-         <br>
-        <ngx-codemirror   
-        [(ngModel)] = "this.entradas[3]"
-        [options]="{
-          lineNumbers: true,
-          theme: 'dracula',
-          mode: 'javascript'
-        }"
-      > </ngx-codemirror>
+          <br />
+          <ngx-codemirror
+            [(ngModel)]="this.entradas[0]"
+            [options]="{
+              lineNumbers: true,
+              theme: 'twilight',
+              mode: 'javascript',
+              matchBrackets:true
+            }"
+          ></ngx-codemirror>
           <div class="form-group col-12 m-1 my-4">
-          <button (click)="excuteProgram(this.entradas[3])" type="button" class="btn btn-outline-success col-12">Analizar</button>
+            <button
+              (click)="excuteProgram(this.entradas[0])"
+              type="button"
+              class="btn btn-outline-success col-12"
+            >
+              Analizar
+            </button>
           </div>
-      </div>   
+        </div>
+
+        <div class="tab-pane fade" id="window_1">
+          <div class="row">
+            <div class="form-group col-8 my-4">
+              <label for="exampleInputFile">
+                <font style="vertical-align: heredar">
+                  <font style="vertical-align: heredar">
+                    Abre un Archivo</font
+                  ></font
+                ></label
+              >
+              <input
+                id="fileInput"
+                (change)="fileChanged($event, 1)"
+                style="background-color: aliceblue; color: black"
+                type="file"
+                class="form-control-file"
+                id="exampleInputFile"
+                aria-describedby="fileHelp"
+              />
+            </div>
+            <div
+              class="btn-group btn-group-toggle my-4 col-4"
+              data-toggle="botones"
+            >
+              <button
+                (click)="addWindow()"
+                type="button"
+                class="btn btn-success"
+              >
+                ADD WINDOW
+              </button>
+              <button (click)="SA_VE(1)" type="button" class="btn btn-info">
+                SAVE
+              </button>
+            </div>
+          </div>
+          <br />
+          <ngx-codemirror
+            [(ngModel)]="this.entradas[1]"
+            [options]="{
+              lineNumbers: true,
+              theme: 'dracula',
+              mode: 'javascript'
+            }"
+          ></ngx-codemirror>
+          <div class="form-group col-12 m-1 my-4">
+            <button
+              (click)="excuteProgram(this.entradas[1])"
+              type="button"
+              class="btn btn-outline-success col-12"
+            >
+              Analizar
+            </button>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="window_2">
+          <div class="row">
+            <div class="form-group col-8 my-4">
+              <label for="exampleInputFile">
+                <font style="vertical-align: heredar">
+                  <font style="vertical-align: heredar">
+                    Abre un Archivo</font
+                  ></font
+                ></label
+              >
+              <input
+                id="fileInput"
+                (change)="fileChanged($event, 2)"
+                style="background-color: aliceblue; color: black"
+                type="file"
+                class="form-control-file"
+                id="exampleInputFile"
+                aria-describedby="fileHelp"
+              />
+            </div>
+            <div
+              class="btn-group btn-group-toggle my-4 col-4"
+              data-toggle="botones"
+            >
+              <button
+                (click)="addWindow()"
+                type="button"
+                class="btn btn-success"
+              >
+                ADD WINDOW
+              </button>
+              <button (click)="SA_VE(2)" type="button" class="btn btn-info">
+                SAVE
+              </button>
+            </div>
+          </div>
+          <br />
+          <ngx-codemirror
+            [(ngModel)]="this.entradas[2]"
+            [options]="{
+              lineNumbers: true,
+              theme: 'twilight',
+              mode: 'javascript'
+            }"
+          ></ngx-codemirror>
+          <div class="form-group col-12 m-1 my-4">
+            <button
+              (click)="excuteProgram(this.entradas[2])"
+              type="button"
+              class="btn btn-outline-success col-12"
+            >
+              Analizar
+            </button>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="window_3">
+          <div class="row">
+            <div class="form-group col-8 my-4">
+              <label for="exampleInputFile">
+                <font style="vertical-align: heredar">
+                  <font style="vertical-align: heredar">
+                    Abre un Archivo</font
+                  ></font
+                ></label
+              >
+              <input
+                id="fileInput"
+                (change)="fileChanged($event, 3)"
+                style="background-color: aliceblue; color: black"
+                type="file"
+                class="form-control-file"
+                id="exampleInputFile"
+                aria-describedby="fileHelp"
+              />
+            </div>
+            <div
+              class="btn-group btn-group-toggle my-4 col-4"
+              data-toggle="botones"
+            >
+              <button
+                (click)="addWindow()"
+                type="button"
+                class="btn btn-success"
+              >
+                ADD WINDOW
+              </button>
+              <button (click)="SA_VE(3)" type="button" class="btn btn-info">
+                SAVE
+              </button>
+            </div>
+          </div>
+          <br />
+          <ngx-codemirror
+            [(ngModel)]="this.entradas[3]"
+            [options]="{
+              lineNumbers: true,
+              theme: 'dracula',
+              mode: 'javascript'
+            }"
+          >
+          </ngx-codemirror>
+          <div class="form-group col-12 m-1 my-4">
+            <button
+              (click)="excuteProgram(this.entradas[3])"
+              type="button"
+              class="btn btn-outline-success col-12"
+            >
+              Analizar
+            </button>
+          </div>
+        </div>
 
         <div class="tab-pane fade" id="window_4">
           <div class="row">
-            <div class = "form-group col-8 my-4">
-              <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
-              <input id="fileInput"  (change) ="fileChanged($event ,4)" style="background-color: aliceblue; color:black" type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
+            <div class="form-group col-8 my-4">
+              <label for="exampleInputFile">
+                <font style="vertical-align: heredar">
+                  <font style="vertical-align: heredar">
+                    Abre un Archivo</font
+                  ></font
+                ></label
+              >
+              <input
+                id="fileInput"
+                (change)="fileChanged($event, 4)"
+                style="background-color: aliceblue; color: black"
+                type="file"
+                class="form-control-file"
+                id="exampleInputFile"
+                aria-describedby="fileHelp"
+              />
             </div>
-            <div class = "btn-group btn-group-toggle my-4 col-4" data-toggle = "botones">
-              <button (click)="addWindow()" type="button" class="btn btn-success">ADD WINDOW</button>
-              <button (click)="SA_VE(4)" type="button" class="btn btn-info">SAVE</button>
+            <div
+              class="btn-group btn-group-toggle my-4 col-4"
+              data-toggle="botones"
+            >
+              <button
+                (click)="addWindow()"
+                type="button"
+                class="btn btn-success"
+              >
+                ADD WINDOW
+              </button>
+              <button (click)="SA_VE(4)" type="button" class="btn btn-info">
+                SAVE
+              </button>
             </div>
           </div>
-           <br>
-          <ngx-codemirror 
-          [(ngModel)] = "this.entradas[4]"
-          [options]="{
-            lineNumbers: true,
-            theme: 'twilight',
-            mode: 'javascript'
-          }"
-        ></ngx-codemirror>
-            <div class="form-group col-12 m-1 my-4">
-            <button (click)="excuteProgram(this.entradas[4])" type="button" class="btn btn-outline-success col-12">Analizar</button>
-            </div>
-        </div>   
-
+          <br />
+          <ngx-codemirror
+            [(ngModel)]="this.entradas[4]"
+            [options]="{
+              lineNumbers: true,
+              theme: 'twilight',
+              mode: 'javascript'
+            }"
+          ></ngx-codemirror>
+          <div class="form-group col-12 m-1 my-4">
+            <button
+              (click)="excuteProgram(this.entradas[4])"
+              type="button"
+              class="btn btn-outline-success col-12"
+            >
+              Analizar
+            </button>
+          </div>
+        </div>
 
         <div class="tab-pane fade" id="window_5">
           <div class="row">
-            <div class = "form-group col-8 my-4">
-              <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
-              <input id="fileInput"  (change) ="fileChanged($event ,5)" style="background-color: aliceblue; color:black" type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
+            <div class="form-group col-8 my-4">
+              <label for="exampleInputFile">
+                <font style="vertical-align: heredar">
+                  <font style="vertical-align: heredar">
+                    Abre un Archivo</font
+                  ></font
+                ></label
+              >
+              <input
+                id="fileInput"
+                (change)="fileChanged($event, 5)"
+                style="background-color: aliceblue; color: black"
+                type="file"
+                class="form-control-file"
+                id="exampleInputFile"
+                aria-describedby="fileHelp"
+              />
             </div>
-            <div class = "btn-group btn-group-toggle my-4 col-4" data-toggle = "botones">
-              <button (click)="addWindow()" type="button" class="btn btn-success">ADD WINDOW</button>
-              <button (click)="SA_VE(5)" type="button" class="btn btn-info">SAVE</button>
+            <div
+              class="btn-group btn-group-toggle my-4 col-4"
+              data-toggle="botones"
+            >
+              <button
+                (click)="addWindow()"
+                type="button"
+                class="btn btn-success"
+              >
+                ADD WINDOW
+              </button>
+              <button (click)="SA_VE(5)" type="button" class="btn btn-info">
+                SAVE
+              </button>
             </div>
           </div>
-           <br>
-          <ngx-codemirror  
-          [(ngModel)] = "this.entradas[5]"
-          [options]="{
-            lineNumbers: true,
-            theme: 'dracula',
-            mode: 'javascript'
-          }"
-        ></ngx-codemirror>  
+          <br />
+          <ngx-codemirror
+            [(ngModel)]="this.entradas[5]"
+            [options]="{
+              lineNumbers: true,
+              theme: 'dracula',
+              mode: 'javascript'
+            }"
+          ></ngx-codemirror>
           <div class="form-group col-12 m-1 my-4">
-          <button (click)="excuteProgram(this.entradas[5])" type="button" class="btn btn-outline-success col-12">Analizar</button>
+            <button
+              (click)="excuteProgram(this.entradas[5])"
+              type="button"
+              class="btn btn-outline-success col-12"
+            >
+              Analizar
+            </button>
           </div>
-        </div>   
+        </div>
 
         <div class="tab-pane fade" id="window_6">
           <div class="row">
-            <div class = "form-group col-8 my-4">
-              <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
-              <input id="fileInput"  (change) ="fileChanged($event ,6)" style="background-color: aliceblue; color:black" type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
+            <div class="form-group col-8 my-4">
+              <label for="exampleInputFile">
+                <font style="vertical-align: heredar">
+                  <font style="vertical-align: heredar">
+                    Abre un Archivo</font
+                  ></font
+                ></label
+              >
+              <input
+                id="fileInput"
+                (change)="fileChanged($event, 6)"
+                style="background-color: aliceblue; color: black"
+                type="file"
+                class="form-control-file"
+                id="exampleInputFile"
+                aria-describedby="fileHelp"
+              />
             </div>
-            <div class = "btn-group btn-group-toggle my-4 col-4" data-toggle = "botones">
-              <button (click)="addWindow()" type="button" class="btn btn-success">ADD WINDOW</button>
-              <button (click)="SA_VE(6)" type="button" class="btn btn-info">SAVE</button>
+            <div
+              class="btn-group btn-group-toggle my-4 col-4"
+              data-toggle="botones"
+            >
+              <button
+                (click)="addWindow()"
+                type="button"
+                class="btn btn-success"
+              >
+                ADD WINDOW
+              </button>
+              <button (click)="SA_VE(6)" type="button" class="btn btn-info">
+                SAVE
+              </button>
             </div>
           </div>
-           <br>
-          <ngx-codemirror  
-          [(ngModel)] = "this.entradas[6]"
-          [options]="{
-            lineNumbers: true,
-            theme: 'twilight',
-            mode: 'javascript'
-          }"
-        ></ngx-codemirror>
+          <br />
+          <ngx-codemirror
+            [(ngModel)]="this.entradas[6]"
+            [options]="{
+              lineNumbers: true,
+              theme: 'twilight',
+              mode: 'javascript'
+            }"
+          ></ngx-codemirror>
           <div class="form-group col-12 m-1 my-4">
-          <button (click)="excuteProgram(this.entradas[6])" type="button" class="btn btn-outline-success col-12">Analizar</button>
+            <button
+              (click)="excuteProgram(this.entradas[6])"
+              type="button"
+              class="btn btn-outline-success col-12"
+            >
+              Analizar
+            </button>
           </div>
-        </div>   
+        </div>
 
-          <div class="tab-pane fade" id="window_7">
-            <div class="row">
-              <div class = "form-group col-8 my-4">
-                <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
-                <input id="fileInput"  (change) ="fileChanged($event ,7)" style="background-color: aliceblue; color:black" type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
-              </div>
-              <div class = "btn-group btn-group-toggle my-4 col-4" data-toggle = "botones">
-                <button (click)="addWindow()" type="button" class="btn btn-success">ADD WINDOW</button>
-                <button (click)="SA_VE(7)" type="button" class="btn btn-info">SAVE</button>
-              </div>
+        <div class="tab-pane fade" id="window_7">
+          <div class="row">
+            <div class="form-group col-8 my-4">
+              <label for="exampleInputFile">
+                <font style="vertical-align: heredar">
+                  <font style="vertical-align: heredar">
+                    Abre un Archivo</font
+                  ></font
+                ></label
+              >
+              <input
+                id="fileInput"
+                (change)="fileChanged($event, 7)"
+                style="background-color: aliceblue; color: black"
+                type="file"
+                class="form-control-file"
+                id="exampleInputFile"
+                aria-describedby="fileHelp"
+              />
             </div>
-             <br>
-            <ngx-codemirror  
-            [(ngModel)] = "this.entradas[7]"
+            <div
+              class="btn-group btn-group-toggle my-4 col-4"
+              data-toggle="botones"
+            >
+              <button
+                (click)="addWindow()"
+                type="button"
+                class="btn btn-success"
+              >
+                ADD WINDOW
+              </button>
+              <button (click)="SA_VE(7)" type="button" class="btn btn-info">
+                SAVE
+              </button>
+            </div>
+          </div>
+          <br />
+          <ngx-codemirror
+            [(ngModel)]="this.entradas[7]"
             [options]="{
               lineNumbers: true,
               theme: 'eclipse',
               mode: 'javascript'
             }"
           ></ngx-codemirror>
-            <div class="form-group col-12 m-1 my-4">
-            <button (click)="excuteProgram(this.entradas[7])" type="button" class="btn btn-outline-success col-12">Analizar</button>
-            </div>
-          </div>   
+          <div class="form-group col-12 m-1 my-4">
+            <button
+              (click)="excuteProgram(this.entradas[7])"
+              type="button"
+              class="btn btn-outline-success col-12"
+            >
+              Analizar
+            </button>
+          </div>
+        </div>
 
-          <div class="tab-pane fade" id="window_8">
-            <div class="row">
-              <div class = "form-group col-8 my-4">
-                <label for = "exampleInputFile"> <font style = "vertical-align: heredar;"> <font style = "vertical-align: heredar;"> Abre un Archivo</font></font></label>
-                <input id="fileInput"  (change) ="fileChanged($event ,8)" style="background-color: aliceblue; color:black" type = "file" class = "form-control-file" id = "exampleInputFile" aria-describedby = "fileHelp">
-              </div>
-              <div class = "btn-group btn-group-toggle my-4 col-4" data-toggle = "botones">
-                <button (click)="addWindow()" type="button" class="btn btn-success">ADD WINDOW</button>
-                <button (click)="SA_VE(8)" type="button" class="btn btn-info">SAVE</button>
-              </div>
+        <div class="tab-pane fade" id="window_8">
+          <div class="row">
+            <div class="form-group col-8 my-4">
+              <label for="exampleInputFile">
+                <font style="vertical-align: heredar">
+                  <font style="vertical-align: heredar">
+                    Abre un Archivo</font
+                  ></font
+                ></label
+              >
+              <input
+                id="fileInput"
+                (change)="fileChanged($event, 8)"
+                style="background-color: aliceblue; color: black"
+                type="file"
+                class="form-control-file"
+                id="exampleInputFile"
+                aria-describedby="fileHelp"
+              />
             </div>
-             <br>
-            <ngx-codemirror 
-            [(ngModel)] = "this.entradas[8]"
+            <div
+              class="btn-group btn-group-toggle my-4 col-4"
+              data-toggle="botones"
+            >
+              <button
+                (click)="addWindow()"
+                type="button"
+                class="btn btn-success"
+              >
+                ADD WINDOW
+              </button>
+              <button (click)="SA_VE(8)" type="button" class="btn btn-info">
+                SAVE
+              </button>
+            </div>
+          </div>
+          <br />
+          <ngx-codemirror
+            [(ngModel)]="this.entradas[8]"
             [options]="{
               lineNumbers: true,
               theme: 'eclipse',
               mode: 'javascript'
             }"
-          ></ngx-codemirror> 
-            <div class="form-group col-12 m-1 my-4">
-            <button (click)="excuteProgram(this.entradas[8])" type="button" class="btn btn-outline-success col-12">Analizar</button>
-            </div>
-          </div>   
-
-
-
+          ></ngx-codemirror>
+          <div class="form-group col-12 m-1 my-4">
+            <button
+              (click)="excuteProgram(this.entradas[8])"
+              type="button"
+              class="btn btn-outline-success col-12"
+            >
+              Analizar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div class="container col-sm-12 col-md-8 col-xl-8">
+  <div class="card text-white bg-warning" 
+  [hidden] = "false">
+   <div class="card-body">Consola</div>
+   <div class="card-footer " style="background-color: black;">
+    <ngx-codemirror 
+    [(ngModel)]="this.salida"
+    [options]="{
+      lineNumbers: false,
+      readOnly: 'nocursor',
+      matchBrackets:true,
+      theme: 'ayu-dark',
+      mode: 'javascript',
+      onlyRead: true
+    }"
+  ></ngx-codemirror>
+  </div>
+ </div>
 
-</div>
-
-
-
-  
 </div>
