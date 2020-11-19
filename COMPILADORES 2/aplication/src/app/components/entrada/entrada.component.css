@@ -1,5 +1,14 @@
-.contenido{
-    height: 500px;
-    height: 800px;
-    background-color: aliceblue;
+.contenido {
+  height: 500px;
+  height: 800px;
+  background-color: aliceblue;
+}
+
+.bgImagenYO {
+  background-image: url(./../../../assets/fondo2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  font-family: cursive;
 }

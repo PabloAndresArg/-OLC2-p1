@@ -5,11 +5,12 @@
   crossorigin="anonymous"
 />
 
-<div class="container col-sm-12 col-md-8 col-xl-8">
-  <div class="card text-white bg-primary mb-3">
-    <div class="card-header">
-      <h6 class="display-2 offset-2">COMPILADORES 2</h6>
-      <br />
+<div class="container col-sm-12 col-md-8 col-xl-8 ">
+  <div class="card text-white bg-warning mb-3">
+    <div class="card-header bg-info">
+      <h6 class="display-2 offset-2 ">COMPILADORES 2</h6>
+      <img src="" class="h-auto w-auto col-4 justify-content-center">
+      <br>
     </div>
     <div class="card-body"  style="background-color: black; ">
       <!-- INICIO CONTENEDOR TARGET  -->
@@ -19,7 +20,7 @@
         </li>
       </ul>
 
-      <div id="MIS_TEXTS" class="tab-content">
+      <div id="MIS_TEXTS" class="tab-content bgImagenYO">
         <br />
         <div class="tab-pane fade active" id="home">
           <div class="row">
@@ -71,7 +72,8 @@
             <button
               (click)="excuteProgram(this.entradas[0])"
               type="button"
-              class="btn btn-outline-success col-12"
+              class="btn btn-outline-success btn-dark col-12 my-0 text-uppercase"
+              style="font-size: 18px; font-family: 'Times New Roman', Times, serif;"
             >
               Analizar
             </button>
@@ -127,7 +129,8 @@
             <button
               (click)="excuteProgram(this.entradas[1])"
               type="button"
-              class="btn btn-outline-success col-12"
+              class="btn btn-outline-success btn-dark col-12 my-0 text-uppercase"
+              style="font-size: 18px; font-family: 'Times New Roman', Times, serif;"
             >
               Analizar
             </button>
@@ -183,7 +186,8 @@
             <button
               (click)="excuteProgram(this.entradas[2])"
               type="button"
-              class="btn btn-outline-success col-12"
+              class="btn btn-outline-success btn-dark col-12 my-0 text-uppercase"
+              style="font-size: 18px; font-family: 'Times New Roman', Times, serif;"
             >
               Analizar
             </button>
@@ -240,7 +244,8 @@
             <button
               (click)="excuteProgram(this.entradas[3])"
               type="button"
-              class="btn btn-outline-success col-12"
+              class="btn btn-outline-success btn-dark col-12 my-0 text-uppercase"
+              style="font-size: 18px; font-family: 'Times New Roman', Times, serif;"
             >
               Analizar
             </button>
@@ -296,7 +301,8 @@
             <button
               (click)="excuteProgram(this.entradas[4])"
               type="button"
-              class="btn btn-outline-success col-12"
+              class="btn btn-outline-success btn-dark col-12 my-0 text-uppercase"
+              style="font-size: 18px; font-family: 'Times New Roman', Times, serif;"
             >
               Analizar
             </button>
@@ -352,7 +358,8 @@
             <button
               (click)="excuteProgram(this.entradas[5])"
               type="button"
-              class="btn btn-outline-success col-12"
+              class="btn btn-outline-success btn-dark col-12 my-0 text-uppercase"
+              style="font-size: 18px; font-family: 'Times New Roman', Times, serif;"
             >
               Analizar
             </button>
@@ -408,7 +415,8 @@
             <button
               (click)="excuteProgram(this.entradas[6])"
               type="button"
-              class="btn btn-outline-success col-12"
+              class="btn btn-outline-success btn-dark col-12 my-0 text-uppercase"
+              style="font-size: 18px; font-family: 'Times New Roman', Times, serif;"
             >
               Analizar
             </button>
@@ -464,7 +472,8 @@
             <button
               (click)="excuteProgram(this.entradas[7])"
               type="button"
-              class="btn btn-outline-success col-12"
+              class="btn btn-outline-success btn-dark col-12 my-0 text-uppercase"
+              style="font-size: 18px; font-family: 'Times New Roman', Times, serif;"
             >
               Analizar
             </button>
@@ -520,7 +529,8 @@
             <button
               (click)="excuteProgram(this.entradas[8])"
               type="button"
-              class="btn btn-outline-success col-12"
+              class="btn btn-outline-success btn-dark col-12 my-0 text-uppercase"
+              style="font-size: 18px; font-family: 'Times New Roman', Times, serif;"
             >
               Analizar
             </button>
@@ -531,12 +541,45 @@
   </div>
 </div>
 
-<div class="container col-sm-12 col-md-8 col-xl-8">
-  <div class="card text-white bg-warning" 
+<div class="container col-sm-12 col-md-8 col-xl-8 mt-0">
+  <div class="card text-white bg-warning text-center" 
   [hidden] = "false">
-   <div class="card-body">Consola</div>
+   <div class="card-body bg-info my-0 mt-0" style="height: 60px;">
+      <ul class="nav nav-pills justify-content-end my-0 mt-0 ">
+        <li class="nav-item dropdown" style="height: 25px; border-radius: 20px;">
+          <a  class="dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Change</a>
+          
+          <div class="dropdown-menu bg-dark btn-outline-info">
+            <a class="dropdown-item active2" >Consola <i class="mx-2"><svg  width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-code-slash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0zm-.999-3.124a.5.5 0 0 1 .33.625l-4 13a.5.5 0 0 1-.955-.294l4-13a.5.5 0 0 1 .625-.33z"/>
+            </svg> </i>
+   
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" >ATS
+              <i class="mx-2"><svg class="mx-2" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-tree" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .416.223l3 4.5A.5.5 0 0 1 11 5.5h-.098l2.022 3.235a.5.5 0 0 1-.424.765h-.191l1.638 3.276a.5.5 0 0 1-.447.724h-11a.5.5 0 0 1-.447-.724L3.69 9.5H3.5a.5.5 0 0 1-.424-.765L5.098 5.5H5a.5.5 0 0 1-.416-.777l3-4.5A.5.5 0 0 1 8 0zM5.934 4.5H6a.5.5 0 0 1 .424.765L4.402 8.5H4.5a.5.5 0 0 1 .447.724L3.31 12.5h9.382l-1.638-3.276A.5.5 0 0 1 11.5 8.5h.098L9.576 5.265A.5.5 0 0 1 10 4.5h.066L8 1.401 5.934 4.5z"/>
+                <path d="M7 13.5h2V16H7v-2.5z"/>
+              </svg></i>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" >Traduccion
+              <i class="mx-2"><svg class="mx-2" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-stickies" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0H13a1 1 0 0 1 1 1H1.5a.5.5 0 0 0-.5.5V14a1 1 0 0 1-1-1V1.5z"/>
+                <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h11A1.5 1.5 0 0 1 16 3.5v6.086a1.5 1.5 0 0 1-.44 1.06l-4.914 4.915a1.5 1.5 0 0 1-1.06.439H3.5A1.5 1.5 0 0 1 2 14.5v-11zM3.5 3a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h6.086a.5.5 0 0 0 .353-.146l4.915-4.915A.5.5 0 0 0 15 9.586V3.5a.5.5 0 0 0-.5-.5h-11z"/>
+                <path fill-rule="evenodd" d="M10.5 10a.5.5 0 0 0-.5.5v5H9v-5A1.5 1.5 0 0 1 10.5 9h5v1h-5z"/>
+              </svg></i>
+            </a>
+          
+          </div>
+
+
+        </li>
+      </ul>
+   </div>
    <div class="card-footer " style="background-color: black;">
     <ngx-codemirror 
+    [hidden]="false"
     [(ngModel)]="this.salida"
     [options]="{
       lineNumbers: false,
@@ -547,6 +590,10 @@
       onlyRead: true
     }"
   ></ngx-codemirror>
+
+
+
+
   </div>
  </div>
 
