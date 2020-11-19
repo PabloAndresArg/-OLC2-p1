@@ -17,6 +17,12 @@ export class EntradaComponent implements OnInit {
   public entradas:any = [];
   public cantidadPestanias: number = 9;
   public salida: any;
+  // ------------------- variables show
+  public HiddenTree: boolean;
+  public HiddenConsola: boolean;
+  public HiddenTraduction: boolean; 
+
+  //--------------------
   constructor() {
     for (let i = 0 ; i < this.cantidadPestanias ; i++) {
       this.entradas.push('');
@@ -28,6 +34,14 @@ export class EntradaComponent implements OnInit {
     for (let i = 1 ; i < this.cantidadPestanias ; i++) {
       this.entradas[i] ='\t';
     } 
+    this.HiddenConsola = true;
+    this.HiddenTraduction = true;
+    this.HiddenTree = true;
+  }
+  activateHiddenConsola(): void {
+    this.HiddenConsola = false;
+    this.HiddenTree = true;
+    this.HiddenTraduction = true;
   }
 
   
