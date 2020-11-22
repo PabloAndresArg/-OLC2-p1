@@ -1,5 +1,3 @@
-
-
 export abstract class Nodo{
     linea: Number; 
     column: Number; 

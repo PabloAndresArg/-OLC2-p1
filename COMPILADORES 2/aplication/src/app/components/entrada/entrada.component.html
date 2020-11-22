@@ -577,7 +577,7 @@
         </li>
       </ul>
    </div>
-   <div class="card-footer " style="background-color: black;" [hidden]="HiddenConsola">
+   <div class="card-footer " id="consolaPablo" style="background-color: black;" [hidden]="HiddenConsola">
     <ngx-codemirror 
     [(ngModel)]="this.salida"
     [options]="{
@@ -589,11 +589,10 @@
       onlyRead: true
     }"
   ></ngx-codemirror>
-
-
-
-
   </div>
+
+
+
  </div>
 
 </div>
