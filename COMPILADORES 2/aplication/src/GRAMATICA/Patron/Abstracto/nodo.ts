@@ -1,8 +1,8 @@
 export abstract class Nodo{
-    linea: Number; 
-    column: Number; 
+    linea: number; 
+    column: number; 
     tipo: any;
-    constructor( tipo: any,linea: Number , columna: Number){
+    constructor( tipo: any,linea: number , columna: number){
      this.linea =  linea;
      this.column = columna;
      this.tipo = tipo;

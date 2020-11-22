@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import jison from "./../../../GRAMATICA/olc2";
+import {ListaErrores} from "./../../../GRAMATICA/build/Errors/listaErrores"
+//import {ListaErrores} from "./../../../GRAMATICA/Patron/Errors/listaErrores" IMPORTAR OS BUIDL SINO NO TRAERA LO BUENO 
 import {saveAs} from 'file-saver';
 @Component({
   selector: 'app-entrada',
@@ -48,8 +50,10 @@ export class EntradaComponent implements OnInit {
   public excuteProgram(entrada_: string): any{
     console.log('Analizando: ' , entrada_);
     try {
+      ListaErrores.errores = [];
       let arbol = jison.parse(entrada_);
       console.log(arbol);
+      console.log(ListaErrores.errores);
     } catch (error) {
       console.log(error);
     }
