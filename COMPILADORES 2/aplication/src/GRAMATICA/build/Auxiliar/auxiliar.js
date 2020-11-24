@@ -3,8 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const error_1 = require("../Errors/error_");
 const listaErrores_1 = require("../Errors/listaErrores");
 class Auxiliar {
-    constructor() {
-    }
     tieneComillasDoblesAdentro(matched) {
         if (matched.length > 1) {
             let contador = 1;
@@ -13,11 +11,11 @@ class Auxiliar {
                     contador++;
                 }
             }
-            if (contador === 2) { // es par 
+            if (contador === 2) {
                 console.log(contador);
                 console.log('ok');
             }
-            else { // es impar 
+            else {
                 console.log(contador);
                 console.log('Error::::::');
                 let error = new error_1.Error_('SINTACTICO', 0, ' no se cierra correctamente las comillas ');

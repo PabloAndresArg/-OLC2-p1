@@ -1,10 +1,6 @@
 import {Error_} from '../Errors/error_';
 import {ListaErrores} from '../Errors/listaErrores';
 export  class Auxiliar{
-
-    constructor(){
-
-    }
     public  tieneComillasDoblesAdentro(matched : string): void{
         if (matched.length > 1){
             let contador: number = 1 ;
@@ -13,10 +9,10 @@ export  class Auxiliar{
                 contador++;
             }
             }
-            if (contador === 2){// es par 
+            if (contador === 2){
                 console.log(contador);
                 console.log('ok');
-            }else{// es impar 
+            }else{
                 console.log(contador);
                 console.log('Error::::::');
                 let error = new Error_('SINTACTICO' , 0 ,' no se cierra correctamente las comillas ');
@@ -24,5 +20,6 @@ export  class Auxiliar{
             }
         }
     }
+
 
 }

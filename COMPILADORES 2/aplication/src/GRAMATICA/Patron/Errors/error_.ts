@@ -1,8 +1,8 @@
 export  class Error_{
     public tipoError: string
-    public line: number;
+    public line: Number;
     public descripcion: string;
-    constructor(tipoError: string , linea: number , des : string ){
+    constructor(tipoError: string , linea: Number , des : string ){
         this.line = linea;
         this.tipoError = tipoError;
         this.descripcion = des;

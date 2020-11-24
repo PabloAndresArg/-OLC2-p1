@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import jison from "./../../../GRAMATICA/olc2";
 import {ListaErrores} from "./../../../GRAMATICA/build/Errors/listaErrores"
 //import {ListaErrores} from "./../../../GRAMATICA/Patron/Errors/listaErrores" IMPORTAR OS BUIDL SINO NO TRAERA LO BUENO 
+import {showConsola} from '../../../GRAMATICA/build/Auxiliar/listaShowConsola'
 import {saveAs} from 'file-saver';
+import { Table } from 'src/GRAMATICA/build/Tabla/table';
 @Component({
   selector: 'app-entrada',
   templateUrl: './entrada.component.html',
@@ -45,7 +47,6 @@ export class EntradaComponent implements OnInit {
     this.HiddenTree = true;
     this.HiddenTraduction = true;
   }
-
   
   public excuteProgram(entrada_: string): any{
     console.log('Analizando: ' , entrada_);
@@ -53,7 +54,10 @@ export class EntradaComponent implements OnInit {
       ListaErrores.errores = [];
       let arbol = jison.parse(entrada_);
       console.log(arbol);
-      console.log(ListaErrores.errores);
+      if (ListaErrores.errores.length <= 0 ){
+        this.salida = arbol.ejecutarArbol();
+        this.HiddenConsola = false; 
+      }
     } catch (error) {
       console.log(error);
     }

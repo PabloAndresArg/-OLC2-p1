@@ -1,31 +1,26 @@
-<link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css"
-  integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ"
-  crossorigin="anonymous"
-/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous" />
 
 <div class="container col-sm-12 col-md-8 col-xl-8 ">
-  <div class="card text-white bg-warning mb-3">
-    <div class="card-header bg-info">
-      <h6 class="display-2 offset-2 ">COMPILADORES 2</h6>
-      <img src="" class="h-auto w-auto col-4 justify-content-center">
-      <br>
-    </div>
-    <div class="card-body"  style="background-color: black; ">
-      <!-- INICIO CONTENEDOR TARGET  -->
-      <ul class="nav nav-tabs" id="padreWindows">
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#home">P0</a>
-        </li>
-      </ul>
+    <div class="card text-white bg-warning mb-3">
+        <div class="card-header bg-info">
+            <h6 class="display-2 offset-2 ">COMPILADORES 2</h6>
+            <img src="" class="h-auto w-auto col-4 justify-content-center">
+            <br>
+        </div>
+        <div class="card-body" style="background-color: black; ">
+            <!-- INICIO CONTENEDOR TARGET  -->
+            <ul class="nav nav-tabs" id="padreWindows">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#home">P0</a>
+                </li>
+            </ul>
 
-      <div id="MIS_TEXTS" class="tab-content bgImagenYO">
-        <br />
-        <div class="tab-pane fade active" id="home">
-          <div class="row">
-            <div class="form-group col-8 my-4">
-              <label for="exampleInputFile">
+            <div id="MIS_TEXTS" class="tab-content bgImagenYO">
+                <br />
+                <div class="tab-pane fade active" id="home">
+                    <div class="row">
+                        <div class="form-group col-8 my-4">
+                            <label for="exampleInputFile">
                 <font style="vertical-align: heredar">
                   <font style="vertical-align: heredar">
                     Abre un Archivo</font
@@ -578,7 +573,7 @@
       </ul>
    </div>
    <div class="card-footer " id="consolaPablo" style="background-color: black;" [hidden]="HiddenConsola">
-    <ngx-codemirror 
+    <ngx-codemirror style="text-align: justify; font-size: 20px;"
     [(ngModel)]="this.salida"
     [options]="{
       lineNumbers: false,
