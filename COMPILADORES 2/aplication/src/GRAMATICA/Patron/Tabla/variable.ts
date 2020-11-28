@@ -4,11 +4,11 @@ export class Variable {
     tipo: Tipo; 
     reasing: boolean; 
     value: any;
-    constructor(id: string, tipo: any , reasing: boolean , value: any){
+    constructor(id: string, tipo: Tipo , reasing: boolean , val: any){
         this.id = id;
         this.tipo = tipo; 
         this.reasing = reasing;
-        this.value = this.value;
+        this.value = val; 
     }
 
     private getTipo(): Tipo{ return this.tipo;}

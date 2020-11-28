@@ -58,12 +58,12 @@
             [(ngModel)]="this.entradas[0]"
             [options]="{
               lineNumbers: true,
-              theme: 'twilight',
+              theme: 'blackboard',
               mode: 'javascript',
-              matchBrackets:true
+              inputStyle:'textarea'
             }"
           ></ngx-codemirror>
-          <div class="form-group col-12 m-1 my-4">
+          <div class="form-group col-12 m-1">
             <button
               (click)="excuteProgram(this.entradas[0])"
               type="button"
@@ -120,7 +120,7 @@
               mode: 'javascript'
             }"
           ></ngx-codemirror>
-          <div class="form-group col-12 m-1 my-4">
+          <div class="form-group col-12 m-1">
             <button
               (click)="excuteProgram(this.entradas[1])"
               type="button"
@@ -177,7 +177,7 @@
               mode: 'javascript'
             }"
           ></ngx-codemirror>
-          <div class="form-group col-12 m-1 my-4">
+          <div class="form-group col-12 m-1">
             <button
               (click)="excuteProgram(this.entradas[2])"
               type="button"
@@ -235,7 +235,7 @@
             }"
           >
           </ngx-codemirror>
-          <div class="form-group col-12 m-1 my-4">
+          <div class="form-group col-12 m-1">
             <button
               (click)="excuteProgram(this.entradas[3])"
               type="button"
@@ -292,7 +292,7 @@
               mode: 'javascript'
             }"
           ></ngx-codemirror>
-          <div class="form-group col-12 m-1 my-4">
+          <div class="form-group col-12 m-1">
             <button
               (click)="excuteProgram(this.entradas[4])"
               type="button"
@@ -349,7 +349,7 @@
               mode: 'javascript'
             }"
           ></ngx-codemirror>
-          <div class="form-group col-12 m-1 my-4">
+          <div class="form-group col-12 m-1">
             <button
               (click)="excuteProgram(this.entradas[5])"
               type="button"
@@ -406,7 +406,7 @@
               mode: 'javascript'
             }"
           ></ngx-codemirror>
-          <div class="form-group col-12 m-1 my-4">
+          <div class="form-group col-12 m-1">
             <button
               (click)="excuteProgram(this.entradas[6])"
               type="button"
@@ -463,7 +463,7 @@
               mode: 'javascript'
             }"
           ></ngx-codemirror>
-          <div class="form-group col-12 m-1 my-4">
+          <div class="form-group col-12 m-1">
             <button
               (click)="excuteProgram(this.entradas[7])"
               type="button"
@@ -520,7 +520,7 @@
               mode: 'javascript'
             }"
           ></ngx-codemirror>
-          <div class="form-group col-12 m-1 my-4">
+          <div class="form-group col-12 m-1">
             <button
               (click)="excuteProgram(this.entradas[8])"
               type="button"
@@ -565,6 +565,11 @@
                 <path fill-rule="evenodd" d="M10.5 10a.5.5 0 0 0-.5.5v5H9v-5A1.5 1.5 0 0 1 10.5 9h5v1h-5z"/>
               </svg></i>
             </a>
+            <div class="dropdown-divider"></div>
+            <a (click) = "activateHiddenErrors()" class="dropdown-item" >ERRORES
+              <i class="mx-2"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-backspace-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M6.603 2h7.08a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-7.08a1 1 0 0 1-.76-.35L1 8l4.844-5.65A1 1 0 0 1 6.603 2zm7.08-1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zM5.829 5.146a.5.5 0 0 0 0 .708L7.976 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>  </svg></i>
+            </a>
           
           </div>
 
@@ -573,7 +578,7 @@
       </ul>
    </div>
    <div class="card-footer " id="consolaPablo" style="background-color: black;" [hidden]="HiddenConsola">
-    <ngx-codemirror style="text-align: justify; font-size: 20px;"
+    <ngx-codemirror style="text-align: justify; font-size: 15px; font-family: 'Times New Roman', Times, serif;"
     [(ngModel)]="this.salida"
     [options]="{
       lineNumbers: false,
@@ -584,6 +589,25 @@
       onlyRead: true
     }"
   ></ngx-codemirror>
+  </div>
+  <div class="card-footer" style="background-color: black;" [hidden] = "HiddenErrors">
+    <h1 class="display-4 center offset-0">REPORTE ERRORES </h1>
+    <table class="table table-dark">
+      <thead class="table-danger ">
+        <tr>
+          <th scope="col">Tipo Error</th>
+          <th scope="col">Linea</th>
+          <th scope="col">descripcion</th>
+        </tr>
+      </thead>
+      <tbody  *ngFor="let e of this.errores" >
+        <tr>
+          <td>{{e.tipoError}}</td>
+          <td>{{e.line}}</td>
+          <td>{{e.descripcion}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
 

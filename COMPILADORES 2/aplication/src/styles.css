@@ -6,6 +6,7 @@
 @import "~codemirror/theme/twilight";
 @import "~codemirror/theme/bespin";
 @import "~codemirror/theme/ayu-dark";
+@import "~codemirror/theme/blackboard";
 .CodeMirror {
   height: 500px;
 }

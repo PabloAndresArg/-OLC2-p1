@@ -10,8 +10,8 @@ class Arbol {
         listaShowConsola_1.showConsola.salida = ""; // cada vez que genere un arbol nuevo haré una nueva ejecucion
     }
     ejecutarArbol() {
+        const t = new table_1.Table(null);
         this.hijos.map((m) => {
-            let t = new table_1.Table(null);
             const res = m.ejecucion(t);
         });
         return listaShowConsola_1.showConsola.salida;

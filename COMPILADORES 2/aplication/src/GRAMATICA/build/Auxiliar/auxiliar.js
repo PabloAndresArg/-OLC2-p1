@@ -4,9 +4,16 @@ const error_1 = require("../Errors/error_");
 const listaErrores_1 = require("../Errors/listaErrores");
 class Auxiliar {
     tieneComillasDoblesAdentro(matched) {
+        let IniciaLexema = 0;
         if (matched.length > 1) {
-            let contador = 1;
-            for (let u = 1; u < matched.length; u++) {
+            for (let i = 0; i < matched.length; i++) {
+                if (matched[i] == '"') {
+                    IniciaLexema = i;
+                    break;
+                }
+            }
+            let contador = 0;
+            for (let u = IniciaLexema; u < matched.length; u++) {
                 if (matched[u] == '"' && matched[u - 1] != '\\') {
                     contador++;
                 }
@@ -16,8 +23,9 @@ class Auxiliar {
                 console.log('ok');
             }
             else {
-                console.log(contador);
                 console.log('Error::::::');
+                console.log(matched);
+                console.log(contador);
                 let error = new error_1.Error_('SINTACTICO', 0, ' no se cierra correctamente las comillas ');
                 listaErrores_1.ListaErrores.errores.push(error);
             }

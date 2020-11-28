@@ -14,8 +14,8 @@ export class Arbol{
     }
 
     ejecutarArbol():string{ 
-         this.hijos.map((m:any) =>{
-           let t:Table = new Table(null);
+         const t:Table = new Table(null);
+         this.hijos.map((m:any) =>{  
            const res = m.ejecucion(t);
          });
          return showConsola.salida; 
